@@ -52,7 +52,7 @@ export const Group = styled.div`
 export const SearchInput = styled.input`
   background-color: rgba(64, 64, 64, 0.5);
   color: white;
-  border: 1px solid white;
+  border: 0.4px solid white;
   transition: width 0.5s;
   height: 30px;
   font-size: 14px;
