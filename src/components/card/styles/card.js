@@ -142,7 +142,7 @@ export const Feature = styled.div`
 
   @media (max-width: 1000px) {
     height: auto;
-    background-size: auto;
+    background-size: cover;
 
     ${Title} {
       font-size: 20px;
