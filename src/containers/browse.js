@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useContext, useState, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import SelectProfileContainer from './profiles';
 import { FirebaseContext } from '../context/firebase';
 import { Loading, Header, Card, Player } from '../components';
@@ -27,6 +29,16 @@ export default function BrowseContainer({ slides }) {
   useEffect(() => {
     setSlideRows(slides[category]);
   }, [slides, category]);
+
+  useEffect(() => {
+    const fuse = new Fuse(slideRows, {keys: ['data.description', 'data.title', 'data.genre']})
+    const result = fuse.search(searchTerm).map(({item}) => item)
+    if(slideRows.length > 0 && searchTerm.length > 3 && result.length > 0){
+      setSlideRows(result)
+    } else{
+      setSlideRows(slides[category])
+    }
+  }, [searchTerm])
 
   return profile.displayName ? (
     <>
