@@ -27,7 +27,6 @@ export default function Home() {
             </OptForm.Text>
           </OptForm>
         </Feature>
-        
       </HeaderContainer>
       <JumbotronContainer />
       <FaqsContainer />

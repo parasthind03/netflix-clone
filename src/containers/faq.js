@@ -1,5 +1,5 @@
 import React from 'react';
-import faqdata from '../fixtures/faqs.json';
+import faqdata from '../data/faqs.json';
 import { Accordion } from '../components';
 import {OptForm} from '../components';
 
